@@ -37,12 +37,31 @@ Quantifiers in regular expressions are used to define how many times the element
 "{n}" requires exactly n occurrences.
 "{n,}" allows for n or more occurrences.
 "{n,m}" specifies a range from n to m occurrences.
+Example:
+
+Input: john.doe123@example.com
+Explanation: Utilizing the "+" quantifier, the pattern matches one or more occurrences of alphanumeric characters preceding the "@" symbol.
 
 ### OR Operator
+OR Operator The "|" symbol serves as the OR operator in regular expressions, offering a choice between the pattern on its left or right. For instance, "a|b" can match either 'a' or 'b'.
+
+Example:
+
+Input: john.doe@example.com or jane_doe@example.com Explanation: Using the OR operator "|", the regex can match a period (.) or an underscore (_) in the email username.
 
 ### Character Classes
+Character Classes Defined within square brackets "[]", character classes match any one character from a specified set, useful for matching character ranges or specifying exceptions.
+
+"[aeiou]" matches any vowel. "[0-9]" matches any digit. "[a-zA-Z]" matches any letter regardless of case. Example:
+
+Input: john.doe123@example.com Explanation: The character class "[a-zA-Z]" matches letters in the email's domain part.
 
 ### Flags
+Flags Regex flags like "/i" for case insensitivity, "/g" for global matches, and "/m" for multi-line matches, alter how patterns match text.
+
+Example:
+
+Input: john.doe@example.com Explanation: Flags would modify search behavior but aren't applied in this example.
 
 ### Grouping and Capturing
 
