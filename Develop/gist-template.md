@@ -64,20 +64,56 @@ Example:
 Input: john.doe@example.com Explanation: Flags would modify search behavior but aren't applied in this example.
 
 ### Grouping and Capturing
+Grouping and Capturing Using parentheses "()", parts of a regex pattern can be grouped for capturing, allowing for extraction of specific data segments.
+
+"([a-z]+)" captures a sequence of lowercase letters. Example:
+
+Input: john.doe@example.com Explanation: "([a-z]+)" captures "john" as a group in the email username.
 
 ### Bracket Expressions
+Bracket Expressions Like character classes but with more versatility, bracket expressions "[ ]" match one character from a defined set, including negations and ranges.
 
+"[a-z]" matches any lowercase letter. "[^0-9]" matches any non-digit character. Example:
+
+Input: john.doe@example.com Explanation: "[0-9]" matches digits in the username.
 ### Greedy and Lazy Match
+Quantifiers are greedy by default, capturing as much as possible. A following "?" makes them lazy, aiming for the smallest match.
+
+"." for greedy and ".?" for lazy matches.
+Example:
+
+Input: john.doe@example.com
+Explanation: ".*" matches the entire local part of the email before the "@".
 
 ### Boundaries
+The "\b" marker identifies word boundaries, ensuring matches at the start or end of words.
+
+"\bword\b" precisely matches 'word'.
+Example:
+
+Input: word@example.com
+Explanation: "\b" ensures "word" is matched as a distinct word.
 
 ### Back-references
+Back-references like "\1" reference previously captured groups within the pattern, enabling matching of repeated sequences.
+
+"(\w)\1" matches consecutive identical word characters.
+Example:
+
+Input: aa@example.com
+Explanation: "(\w)\1" matches the repeating "aa" in the email username.
 
 ### Look-ahead and Look-behind
+Assertions for look-ahead and look-behind "(?=...)", "(?!...)", "(?<=...)", "(?<!...)" set conditions for matching based on preceding or following text without including that text in the match.
+
+Example:
+
+Input: john.doe@example.com
+Explanation: A look-ahead "(?=.)" could verify a dot is not the last character by ensuring it's followed by another character, optimizing the match in the email's local part.
 
 ## Author
+My name is Edwin Gonzalez feel free to reach out! https://github.com/WinGonzalez
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
 
 
 
